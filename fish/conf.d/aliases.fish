@@ -1,3 +1,15 @@
+# Hyprland
+alias snip="grim -g \"$(slurp)\" ~/Pictures/snip_$(date +%F_%T).png && wl-copy < ~/Pictures/snip_$(date +%F_%T).png"
+
+
+# List Directory
+alias l='eza -lh  --icons=auto' # long list
+alias ls='eza -1   --icons=auto' # short list
+alias ll='eza -lha --icons=auto --sort=name --group-directories-first' # long list all
+alias ld='eza -lhD --icons=auto' # long list dirs
+alias lt='eza --icons=auto --tree' # list folder as tree
+
+
 # General Git Aliases
 alias gst='git status'
 alias gau='git add -u'
@@ -30,10 +42,14 @@ alias ghpr='git pull origin $(git branch --show-current)'
 alias ghcl='gh repo clone'
 alias ghu='gh repo view --web'
 
+# Python
+alias autopepfix 'autopep8 --in-place --aggressive --aggressive --recursive'
+
+
 # System Aliases
-alias ll='ls -lah'
-alias la='ls -A'
-alias l='ls -CF'
+# alias ll='ls -lah'
+# alias la='ls -A'
+# alias l='ls -CF'
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'

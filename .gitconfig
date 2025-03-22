@@ -1,0 +1,48 @@
+[user]
+    email = name@email.com 
+    name = name
+[init]
+	defaultBranch = main
+[core]
+    compression = 0
+    autocrlf = input
+    excludesfile = ~/.gitignore_global
+    ignorecase = false
+    pager = less -FXRS
+    sparseCheckoutCone = 1
+
+[push]
+	default = upstream
+
+[pull]
+    ff = only
+
+[fetch]
+    prune = true
+    writeCommitGraph = true
+
+[merge]
+    conflictstyle = diff3
+
+[diff]
+    colorMoved = true
+    compactionheuristic = true
+    mnemonicprefix = true
+    renames = copies
+
+[blame]
+    ignoreRevsFile = .git-blame-ignore-revs
+    markIgnoredLines = true
+    markUnblamableLines = true
+
+[grep]
+    lineNumber = true
+    extendedRegexp = true
+    fallbackToNoIndex = true
+
+[wk]
+    wkls = worktree list
+    wkadd = ! "f() { \
+        git worktree add ../$(echo \"$1\" | sed \"s./.--.g\") $2 -b $1 && \
+        echo \"$2\" | grep -qv \"^origin/\" || git branch --unset-upstream $1; \
+        }; f"
